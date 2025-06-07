@@ -13,9 +13,8 @@ it('Should display the title and menu itens', () => {
   })
 });
 
-it.only('Recover password', () => {
+it('Recover password', () => {
   cy.fillRandomEmail('testuser', '#email').then((generatedEmail) => {
-    // Clica no botão para submeter
     cy.contains('button', 'Recover Password').click();
     cy.get('#message')
       .should('be.visible')
