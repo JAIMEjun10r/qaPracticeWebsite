@@ -13,29 +13,29 @@ Cypress.Commands.add('login', (username, password) => {
 
 
 Cypress.Commands.add('selectRandomCountry', () => {
-  // 1. Obter o elemento select pelo ID
+  // 1. Get the select element by its ID
   cy.get('#countries_dropdown_menu')
-    .find('option') // Encontra todas as opções dentro do select
+    .find('option') // Find all the options inside the select
     .then(($options) => {
-      // Converte a coleção de elementos jQuery em um array JavaScript
+      // Convert the jQuery collection of elements into a JavaScript array
       const options = $options.toArray();
 
-      // 2. Remove o primeiro elemento (geralmente "Select a country...")
-      const realCountries = options.slice(1); // Ignora o primeiro elemento
+      // 2. Remove the first element (usually a placeholder like "Select a country...")
+      const realCountries = options.slice(1); // Skips the first element
 
-      // 3. Verifica se há países para selecionar
+      // 3. Check if there are any actual countries to select from
       if (realCountries.length === 0) {
         throw new Error('No actual countries found to select from.');
       }
 
-      // 4. Escolhe um índice aleatório
+      // 4. Pick a random index
       const randomIndex = Math.floor(Math.random() * realCountries.length);
       const randomCountryOption = realCountries[randomIndex];
 
-      // 5. Obtém o 'value' do option escolhido usando .prop('value')
+      // 5. Get the 'value' of the chosen option using .prop('value')
       const countryValue = Cypress.$(randomCountryOption).prop('value');
 
-      // 6. Seleciona a opção no dropdown
+      // 6. Select the option in the dropdown
       cy.get('#countries_dropdown_menu').select(countryValue);
     });
 });
