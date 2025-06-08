@@ -26,6 +26,5 @@ jobs:
       - name: Rodar testes Cypress E2E
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
           start: npm start
           wait-on: 'http://localhost:3000'
