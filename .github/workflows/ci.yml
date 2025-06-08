@@ -35,10 +35,3 @@ jobs:
         with:
           path: cypress/reports
 
-  deploy-report:
-    needs: cypress-run
-    runs-on: ubuntu-latest
-    if: always() 
-    steps:
-      - name: Deploy para GitHub Pages
-        uses: actions/deploy-pages@v4
