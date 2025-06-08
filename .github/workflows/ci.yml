@@ -7,7 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  test: # Mudei o nome do job para 'test'
+  test:
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do código
