@@ -5,10 +5,15 @@ on:
     branches:
       - master
 
+# Permissões para o job poder escrever nas GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -23,5 +28,17 @@ jobs:
 
       - name: Rodar testes Cypress
         uses: cypress-io/github-action@v6
+
+      - name: Preparar artefato do relatório para deploy
+        if: always()
+        uses: actions/upload-pages-artifact@v3
         with:
-          runTests: true
+          path: cypress/reports
+
+  deploy-report:
+    needs: cypress-run
+    runs-on: ubuntu-latest
+    if: always() 
+    steps:
+      - name: Deploy para GitHub Pages
+        uses: actions/deploy-pages@v4
