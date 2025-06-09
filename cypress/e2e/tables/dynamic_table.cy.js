@@ -1,7 +1,3 @@
-beforeEach(() => {
-  cy.visit('/dynamic-table');
-});
-
 describe('Dynamic Table Validation', () => {
   const expectedHeaders = [
     'Avatar',
