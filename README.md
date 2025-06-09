@@ -4,38 +4,35 @@ This repository contains end-to-end (E2E) tests for the QA Practice Website usin
 
 ## Project Structure
 
-qaPracticeWebsite/
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── cypress/
-│   ├── e2e/
-│   │   ├── btn_actions/
-│   │   │   ├── double_click_btn.cy.js
-│   │   │   ├── mouse_hover.cy.js
-│   │   │   ├── scroll.cy.js
-│   │   │   └── show_hide_element.cy.js
-│   │   ├── forms/
-│   │   │   ├── login.cy.js
-│   │   │   ├── recoverPassword.cy.js
-│   │   │   └── register.cy.js
-│   │   ├── new_tab_window/
-│   │   │   ├── new_browser_tab.cy.js
-│   │   │   └── new_browser_window.cy.js
-│   │   └── tables/
-│   │       ├── dynamic_table.cy.js
-│   │       └── static_table.cy.js
-│   ├── fixtures/
-│   │   └── example.json
-│   ├── support/
-│   │   ├── commands.js
-│   │   ├── e2e.js
-│   │   └── utils/
-│   │       └── randomData.js
-├── cypress.config.js
-├── cypress.env.json
-├── package.json
-└── README.md
+📁 cypress
+├── 📁 e2e
+│   ├── 📁 btn_actions
+│   │   ├── 📄 double_click_btn.cy.js
+│   │   ├── 📄 mouse_hover.cy.js
+│   │   ├── 📄 scroll.cy.js
+│   │   └── 📄 show_hide_element.cy.js
+│   ├── 📁 forms
+│   │   ├── 📄 login.cy.js
+│   │   ├── 📄 recoverPassword.cy.js
+│   │   └── 📄 register.cy.js
+│   ├── 📁 new_tab_window
+│   │   ├── 📄 new_browser_tab.cy.js
+│   │   └── 📄 new_browser_window.cy.js
+│   └── 📁 tables
+│       ├── 📄 dynamic_table.cy.js
+│       └── 📄 static_table.cy.js
+📁 fixtures
+├── 📄 example.json
+📁 support
+├── 📄 commands.js
+├── 📄 e2e.js
+└── 📁 utils
+    └── 📄 randomData.js
+📄 cypress.config.js
+📄 cypress.env.json
+📄 package.json
+📄 README.md
+
 
 
 npx cypress open### Key Files and Directories
